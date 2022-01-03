@@ -1,7 +1,8 @@
 import React from 'react';
+import Overview from '../src/components/Overview';
 
 function App() {
-  return <div></div>;
+  return <Overview />;
 }
 
 export default App;
