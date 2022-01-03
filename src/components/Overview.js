@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Overview() {
-  return <p>All Tasks</p>;
+function Overview(props) {
+  return <div>{props.tasksArray}</div>;
 }
 
 export default Overview;
