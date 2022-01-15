@@ -21,7 +21,8 @@ function App() {
   }
 
   //Clears all tasks.
-  function clearTasks() {
+  function clearTasks(e) {
+    e.preventDefault();
     setTaskArray([]);
   }
 
