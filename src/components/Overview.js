@@ -1,12 +1,12 @@
 import React from 'react';
-import uniqid from 'uniqid';
 
 function Overview(props) {
+  console.log(props.tasksArray);
   return (
     <div>
       <ul>
         {props.tasksArray.map((task) => {
-          return <li key={uniqid()}>{task}</li>;
+          return <li key={task.id}>{task.text}</li>;
         })}
       </ul>
     </div>
