@@ -37,8 +37,6 @@ function App() {
     setTaskArray([]);
   }
 
-  console.log(newTask);
-
   return (
     <div className="mainContainer">
       <form className="form">
