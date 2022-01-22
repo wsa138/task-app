@@ -1,6 +1,7 @@
 import React from 'react';
 import Overview from '../src/components/Overview';
 import uniqid from 'uniqid';
+import '../src/styles/style.css';
 
 function App() {
   const [taskArray, setTaskArray] = React.useState([]);
@@ -39,8 +40,8 @@ function App() {
   console.log(newTask);
 
   return (
-    <div>
-      <form>
+    <div className="mainContainer">
+      <form className="form">
         <h1>New Task:</h1>
         <input
           type="text"

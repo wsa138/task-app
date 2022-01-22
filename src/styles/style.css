@@ -1,0 +1,21 @@
+body {
+  background-color: #aed1cc;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #110d11;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap;
+}
+
+.form > h1 {
+  width: 100%;
+  text-align: center;
+}
