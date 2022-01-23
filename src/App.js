@@ -42,7 +42,6 @@ function App() {
   }
 
   //Deletes a task when that task is clicked
-  //FIX: Deleteing a lower task throws off the task numbers.
   const handleDelete = (id, num) => {
     const newTaskArray = taskArray
       .filter((task) => {
