@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Overview from '../src/components/Overview';
 import uniqid from 'uniqid';
 import '../src/styles/style.css';
@@ -8,7 +8,10 @@ function App() {
   const [newTask, setNewTask] = React.useState({
     text: '',
     id: '',
+    num: '',
   });
+
+  useState();
 
   // Sets newTask state.
   function handleChange(event) {
@@ -16,10 +19,11 @@ function App() {
     setNewTask((prevTask) => ({
       text: event.target.value,
       id: uniqid(),
+      num: taskArray.length + 1,
     }));
   }
 
-  //Adds the new task to taskArray on click of"Add Task" button.
+  //Adds the new task to taskArray on click of "Add Task" button.
   function addTask(event) {
     event.preventDefault();
     setTaskArray((prevArray) => {

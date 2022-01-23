@@ -6,7 +6,11 @@ function Overview(props) {
     <div>
       <ul>
         {props.tasksArray.map((task) => {
-          return <li key={task.id}>{task.text}</li>;
+          return (
+            <li key={task.id}>
+              {task.num}) {task.text}
+            </li>
+          );
         })}
       </ul>
     </div>
