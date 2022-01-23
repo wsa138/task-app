@@ -41,6 +41,20 @@ function App() {
     setTaskArray([]);
   }
 
+  //Deletes a task when that task is clicked
+  //FIX: Deleteing a lower task throws off the task numbers.
+  const handleDelete = (id, num) => {
+    const newTaskArray = taskArray
+      .filter((task) => {
+        return task.id !== id;
+      })
+      .map((task) => {
+        return task.num < num ? { ...task } : { ...task, num: task.num - 1 };
+      });
+
+    setTaskArray(newTaskArray);
+  };
+
   return (
     <div className="mainContainer">
       <form className="form">
@@ -55,7 +69,7 @@ function App() {
         <button onClick={clearTasks}>Clear Tasks</button>
       </form>
       <h1>Tasks:</h1>
-      <Overview tasksArray={taskArray} />
+      <Overview tasksArray={taskArray} handleDelete={handleDelete} />
     </div>
   );
 }

@@ -1,13 +1,15 @@
 import React from 'react';
 
 function Overview(props) {
-  console.log(props.tasksArray);
   return (
     <div>
       <ul>
         {props.tasksArray.map((task) => {
           return (
-            <li key={task.id}>
+            <li
+              key={task.id}
+              onClick={() => props.handleDelete(task.id, task.num)}
+            >
               {task.num}) {task.text}
             </li>
           );
