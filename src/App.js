@@ -4,6 +4,10 @@ import uniqid from 'uniqid';
 import '../src/styles/style.css';
 
 function App() {
+  //Fix: After setting taskArray to localStorage, load it at start.
+  const initialState = localStorage.getItem('cats')
+    ? JSON.parse(localStorage.getItem('cats'))
+    : [];
   const [taskArray, setTaskArray] = React.useState([]);
   const [newTask, setNewTask] = React.useState({
     text: '',
@@ -11,7 +15,14 @@ function App() {
     num: '',
   });
 
-  useState();
+  //Fix: Need to store taskArray into localStorage
+  useState(() => {
+    localStorage.setItem(
+      'cats',
+      JSON.stringify({ test: 'Homework', id: 12345, num: 1 })
+    );
+    console.log(initialState);
+  });
 
   // Sets newTask state.
   function handleChange(event) {
