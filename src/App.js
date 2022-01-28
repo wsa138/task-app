@@ -4,24 +4,19 @@ import uniqid from 'uniqid';
 import '../src/styles/style.css';
 
 function App() {
-  //Fix: After setting taskArray to localStorage, load it at start.
-  const initialState = localStorage.getItem('cats')
-    ? JSON.parse(localStorage.getItem('cats'))
+  const initialState = localStorage.getItem('tasks')
+    ? JSON.parse(localStorage.getItem('tasks'))
     : [];
-  const [taskArray, setTaskArray] = React.useState([]);
-  const [newTask, setNewTask] = React.useState({
+  const [taskArray, setTaskArray] = useState(initialState);
+  const [newTask, setNewTask] = useState({
     text: '',
     id: '',
     num: '',
   });
 
-  //Fix: Need to store taskArray into localStorage
-  useState(() => {
-    localStorage.setItem(
-      'cats',
-      JSON.stringify({ test: 'Homework', id: 12345, num: 1 })
-    );
-    console.log(initialState);
+  //Sets localStorage.
+  React.useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(taskArray));
   });
 
   // Sets newTask state.
